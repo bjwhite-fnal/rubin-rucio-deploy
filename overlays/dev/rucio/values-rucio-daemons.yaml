@@ -124,8 +124,9 @@ cacheConsumer:
 conveyorTransferSubmitter:
   threads: 1
   podAnnotations: {}
+  groupBulk: 100
   activities: "'Data Brokering' 'Data Consolidation' 'Data rebalancing' 'Debug' 'Express' 'Functional Test' 'Group Subscriptions' Production Input' 'Production Output' Analysis Input' 'Analysis Output' 'Staging' 'T0 Export' 'T0 Tape' 'Upload/Download' 'User Subscriptions' 'Data Challenge'"
-  sleepTime: 10
+  sleepTime: 60
   archiveTimeout: ""
   resources:
     limits:
@@ -377,7 +378,7 @@ ftsRenewal:
     pullPolicy: Always
   vo: "lsst"
   voms: "lsst:/lsst/Role=ddmopr"
-  servers: "https://fts-eval01.slac.stanford.edu:8446"
+  servers: "https://fts-eval01.slac.stanford.edu:8446,https://lcgfts3.gridpp.rl.ac.uk:8446"
 
 automaticRestart:
   enabled: 0
@@ -482,7 +483,7 @@ config:
   conveyor:
     scheme: "srm,gsiftp,root,http,https"
     transfertool: "fts3"
-    ftshosts: "https://fts-eval01.slac.stanford.edu:8446"
+    ftshosts: "https://fts-eval01.slac.stanford.edu:8446,https://lcgfts3.gridpp.rl.ac.uk:8446"
     cacert: "/opt/certs/ca.pem"
     usercert: "/opt/proxy/x509up"
 
@@ -548,8 +549,8 @@ config:
     # password: ""
     # dataset_wait: 60
 
-  transmogrifier:
-    maxdids: 40000
+  # transmogrifier:
+    # maxdids: 40000
 
   # messaging-cache:
     # port: "61123"

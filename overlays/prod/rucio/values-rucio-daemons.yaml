@@ -6,7 +6,7 @@
 abacusAccountCount: 1
 abacusCollectionReplicaCount: 1
 abacusRseCount: 1
-automatixCount: 0
+automatixCount: 1
 cacheConsumerCount: 0
 conveyorTransferSubmitterCount: 1 
 conveyorPollerCount: 1
@@ -98,6 +98,7 @@ abacusRse:
 automatix:
   threads: 1
   sleepTime: 30
+  inputFile: "/opt/rucio/etc/automatix.json"
   podAnnotations: {}
   resources:
     limits:
@@ -390,11 +391,24 @@ additionalSecrets:
     secretName: lsst-schema-file
     mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
     subPath: lsst.py
+  rucio-automatix-input-file:
+    secretName: rucio-automatix-input-file
+    mountPath: /opt/rucio/etc/automatix.json
+    subPath: automatix.json
 
 ## common config values used to configure the Rucio daemons
 config:
   # accounts:
     # special_accounts: "panda, tier0"
+  client:
+    rucio_host: "https://rubin-rucio-dev.slac.stanford.edu:8443"
+    auth_host: "https://rubin-rucio-dev.slac.stanford.edu:8443"
+    auth_type: "x509_proxy"
+    account: "test"
+    client_x509_proxy: "/opt/proxy/x509up"
+    ca_cert: "/opt/certs"
+    protocol_stat_retries: 6
+    request_retries: 6
 
   # common:
     ## config.common.logdir: the default directoy to write logs to (default: "/var/log/rucio")
@@ -448,11 +462,17 @@ config:
     ## config.permission.support_rucio: (default "https://github.com/rucio/rucio/issues/")
     # support_rucio: "https://github.com/rucio/rucio/issues/"
 
-  # automatix:
-    # sites: ""
-    # sleep_time: ""
-    # database_lifetime: ""
-    # set_metadata: ""
+  automatix:
+    rses: "RAL_TEST_DISK"
+    sleep_time: 30
+    dataset_lifetime: 36000
+    set_metadata: "True"
+    account: "test"
+    scope: "user.test"
+    did_prefix: "automatix"
+    separator: "/" 
+    file_pattern: "dsn/uuid"
+    dataset_pattern: "did_prefix/date/uuid"
 
   conveyor:
     scheme: "srm,gsiftp,root,http,https"

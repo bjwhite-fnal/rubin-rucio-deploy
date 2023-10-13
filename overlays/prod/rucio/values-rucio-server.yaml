@@ -2,7 +2,7 @@
 replicaCount: 1
 
 ## authReplicaCount gives the number of authentication server pods to run
-authReplicaCount: 1
+authReplicaCount: 0
 traceReplicaCount: 0
 
 # When set, run extra busybox containers in the relevant pods to also expose the error logs
@@ -157,7 +157,7 @@ ingress:
      - rubin-rucio.slac.stanford.edu 
 
 authIngress:
-  enabled: true 
+  enabled: false 
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"

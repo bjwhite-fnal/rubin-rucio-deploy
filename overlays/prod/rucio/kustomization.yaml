@@ -7,6 +7,7 @@ resources:
 - helm-rucio-ui.yaml
 
 patchesStrategicMerge:
+- patch-ingress.yaml
 - rucio-env-patch.yaml
 - grid-certificates-patch.yaml
 #- patches-rucio-ui.yaml
@@ -26,15 +27,6 @@ secretGenerator:
 - name: usdf-server-cafile
   files:
   - ca.pem=etc/.secrets/ca.pem
-- name: usdf-auth-hostcert
-  files:
-  - hostcert.pem=etc/.secrets/hostcert.pem
-- name: usdf-auth-hostkey
-  files:
-  - hostkey.pem=etc/.secrets/hostkey.pem
-- name: usdf-auth-cafile
-  files:
-  - ca.pem=etc/.secrets/ca.pem
 - name: usdf-rucio-fts-cert
   files:
   - usercert.pem=etc/.secrets/hostcert.pem
@@ -50,6 +42,8 @@ secretGenerator:
 - name: usdf-rucio-ca-bundle
   files:
   - ca.pem=etc/.secrets/ca.pem
+  options:
+    disableNameSuffixHash: true
 # ingress
 - name: rucio-server.tls-secret
   files:
@@ -76,5 +70,17 @@ secretGenerator:
 - name: usdf-lsst-schema-file
   files:
   - lsst.py=etc/lsst.py
+  options:
+    disableNameSuffixHash: true
+
+# automatix input
+- name: usdf-rucio-automatix-input-file
+  files:
+  - automatix.json=etc/.secrets/automatix.json
+  options:
+    disableNameSuffixHash: true
+- name: usdf-hermeskafka-constants
+  files:
+  - constants.py=etc/constants.py
   options:
     disableNameSuffixHash: true

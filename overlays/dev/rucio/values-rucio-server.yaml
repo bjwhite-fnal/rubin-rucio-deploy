@@ -187,6 +187,9 @@ config:
     ## config.common.mailtemplatedir: directory containing the mail templates (default: "/opt/rucio/etc/mail_templates")
     # mailtemplatedir: "/opt/rucio/etc/mail_templates"
 
+  conveyor:
+    usercert: /opt/proxy/x509
+
   # database:
     ## config.database.default: the connection string for the database (default: "sqlite:////tmp/rucio.db")
     # default: "sqlite:////tmp/rucio.db"
