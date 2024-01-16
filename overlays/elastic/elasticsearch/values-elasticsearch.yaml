@@ -61,7 +61,10 @@ transport: {}
 
 # Settings to control how Elasticsearch will be accessed.
 # ref: https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-accessing-elastic-services.html
-http: {}
+http:
+  tls:
+    selfSignedCertificate:
+      disabled: true
 # service:
 #   metadata:
 #     labels:
@@ -94,10 +97,10 @@ secureSettings: {}
 
 # Settings for limiting the number of simultaneous changes to an Elasticsearch resource.
 # ref: https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-update-strategy.html
-updateStrategy: {}
-# changeBudget:
-#   maxSurge: 3
-#   maxUnavailable: 1
+updateStrategy:
+  changeBudget:
+    maxSurge: 3
+    maxUnavailable: 1
 
 # Controlling of connectivity between remote clusters within the same kubernetes cluster.
 # ref: https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-remote-clusters.html
@@ -110,7 +113,7 @@ remoteClusters: {}
 # VolumeClaimDeletePolicy sets the policy for handling deletion of PersistentVolumeClaims for all NodeSets.
 # Possible values are DeleteOnScaledownOnly and DeleteOnScaledownAndClusterDeletion.
 # By default, if not set or empty, the operator sets DeleteOnScaledownAndClusterDeletion.
-volumeClaimDeletePolicy: ""
+volumeClaimDeletePolicy: "DeleteOnScaledownOnly"
 
 # Settings to limit the disruption when pods need to be rescheduled for some reason such as upgrades or routine maintenance.
 # By default, if not set, the operator sets a budget that doesn't allow any pod to be removed in case the cluster is not green or if there is only one node of type `data` or `master`.
@@ -189,11 +192,11 @@ nodeSets:
           # it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value.
           # Defaults used by the ECK Operator, if not specified, are below
           limits:
-            # cpu: 1
-            memory: 2Gi
+            cpu: 2
+            memory: 5Gi
           requests:
-            # cpu: 1
-            memory: 2Gi
+            cpu: 1
+            memory: 3Gi
 
           # Example increasing both the requests and limits values:
           # limits:
@@ -337,11 +340,11 @@ nodeSets:
           # it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value.
           # Defaults used by the ECK Operator, if not specified, are below
           limits:
-            # cpu: 1
-            memory: 2Gi
+            cpu: 3
+            memory: 9Gi
           requests:
-            # cpu: 1
-            memory: 2Gi
+            cpu: 1
+            memory: 5Gi
 
           # Example increasing both the requests and limits values:
           # limits:
