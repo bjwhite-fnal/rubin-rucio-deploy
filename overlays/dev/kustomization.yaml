@@ -3,3 +3,4 @@ bases:
 - postgres/
 - rucio/
 - data-backbone/
+- elastic/

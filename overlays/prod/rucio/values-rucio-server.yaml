@@ -1,15 +1,11 @@
 ## replicaCount gives the number of server pods to run
 replicaCount: 1
 
-## authReplicaCount gives the number of authentication server pods to run
-authReplicaCount: 1
-traceReplicaCount: 0
+# Instead of specifying secrets explicitly, use ones with "expected" names as per "old" rucio
+use_deprecated_implicit_secrets: true
 
 # When set, run extra busybox containers in the relevant pods to also expose the error logs
-exposeErrorLogs:
-  server: True
-  authServer: True
-  traceServer: True
+exposeErrorLogs: true
 
 errorLogsExporterResources:
   limits:
@@ -20,14 +16,11 @@ errorLogsExporterResources:
    memory: 20Mi
 
 # Set to true to enable SSL support for the different servers to be able accept X509 certificates and proxies.
-useSSL:
-  server: true
-  authServer: true
-  traceServer: true
+useSSL: true
 
 image:
   repository: rucio/rucio-server
-  tag: release-1.29.12
+  tag: release-33.2.0
   pullPolicy: Always
 
 service:
@@ -40,22 +33,10 @@ service:
     # loadbalancer.openstack.org/network-id: "<id>"
     # service.beta.kubernetes.io/openstack-internal-load-balancer: "true"
     # loadbalancer.openstack.org/cascade-delete: "false"
-
-authService:
-  type: ClusterIP
-  port: 443
-  targetPort: 443
-  protocol: TCP
-  name: https-rucio-server-auth
-  annotations: {}
-
-traceService:
-  type: ClusterIP
-  port: 443
-  targetPort: 443
-  protocol: TCP
-  name: https-rucio-server-trace
-  annotations: {}
+  loadBalancerIP: null
+  loadBalancerClass: null
+  externalTrafficPolicy: null
+  allocateLoadBalancerNodePorts: true
 
 strategy:
   type: RollingUpdate
@@ -63,34 +44,16 @@ strategy:
     maxSurge: 1
     maxUnavailable: 1
 
-minReadySeconds:
-  server: 5
-  authServer: 5
-  traceServer: 5
+minReadySeconds: 5
 
 livenessProbe:
-  server:
-    initialDelaySeconds: 10
-    periodSeconds: 20
-    timeoutSeconds: 5
-  authServer:
-    initialDelaySeconds: 10
-    periodSeconds: 20
-    timeoutSeconds: 5
-  traceServer:
-    initialDelaySeconds: 10
-    periodSeconds: 20
-    timeoutSeconds: 5
+  initialDelaySeconds: 10
+  periodSeconds: 20
+  timeoutSeconds: 5
 
-serverType:
-  server: flask 
-  authServer: flask 
-  traceServer: trace
+serverType: api
 
-logFormat:
-  server: '[%{%Y-%m-%d %H:%M:%S}t]\t%v\t%h\t%{X-Forwarded-For}i\t%{X-Rucio-RequestId}i\t%>s\t%I\t%B\t%D\t\"%r\"\t\"%{X-Rucio-Auth-Token}i\"\t\"%{User-Agent}i\"\t%{X-Rucio-Script}i'
-  authServer: '[%{%Y-%m-%d %H:%M:%S}t]\t%v\t%h\t%{X-Forwarded-For}i\t%{X-Rucio-RequestId}i\t%>s\t%I\t%B\t%D\t\"%r\"\t\"%{X-Rucio-Auth-Token}i\"\t\"%{User-Agent}i\"\t%{X-Rucio-Script}i'
-  traceServer: '[%{%Y-%m-%d %H:%M:%S}t]\t%v\t%h\t%{X-Forwarded-For}i\t%{X-Rucio-RequestId}i\t%>s\t%I\t%B\t%D\t\"%r\"\t\"%{X-Rucio-Auth-Token}i\"\t\"%{User-Agent}i\"\t%{X-Rucio-Script}i'
+logFormat: '[%{%Y-%m-%d %H:%M:%S}t]\t%v\t%h\t%{X-Forwarded-For}i\t%{X-Rucio-RequestId}i\t%>s\t%I\t%B\t%D\t\"%r\"\t\"%{X-Rucio-Auth-Token}i\"\t\"%{User-Agent}i\"\t%{X-Rucio-Script}i'
 
 monitoring:
   enabled: false
@@ -119,32 +82,40 @@ automaticRestart:
     pullPolicy: IfNotPresent
   schedule: "0 0 * * *"
 
-additionalSecrets:
-  lsst-schema-file:
-    secretName: lsst-schema-file
-    mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-    subPath: lsst.py
+secretMounts:
+  - secretName: policy-package
+    mountPath: /opt/rucio/permissions/rubin
+
+additionalEnvs:
+  - name: PYTHONPATH
+    value: /opt/rucio/permissions
+  - name: RUCIO_CFG_DATABASE_DEFAULT
+    valueFrom:
+      secretKeyRef:
+        name: usdf-db-conn-str
+        key: db-conn-str.txt
 
 wsgi:
   daemonProcesses: "4"
   daemonThreads: "4"
 
 httpd_config:
-  mpm_mode: "event"
-  enable_status: "True"
-  legacy_dn: "True"
-  keep_alive: "On"
-  keep_alive_timeout: "5"
-  max_keep_alive_requests: "128"
-  server_limit: "10"
-  start_servers: "4"
-  thread_limit: "128"
-  threads_per_child: "128"
-  min_spare_threads: "256"
-  max_spare_threads: "512"
-  max_request_workers: "1280"
-  max_connections_per_child: "2048"
+  grid_site_enabled: "True"
   encoded_slashes: "True"
+  legacy_dn: "True"
+  #mpm_mode: "event"
+  #enable_status: "True"
+  #keep_alive: "On"
+  #keep_alive_timeout: "5"
+  #max_keep_alive_requests: "128"
+  #server_limit: "10"
+  #start_servers: "4"
+  #thread_limit: "128"
+  #threads_per_child: "128"
+  #min_spare_threads: "256"
+  #max_spare_threads: "512"
+  #max_request_workers: "1280"
+  #max_connections_per_child: "2048"
 
 ingress:
   enabled: true 
@@ -156,29 +127,8 @@ ingress:
   hosts:
      - rubin-rucio.slac.stanford.edu 
 
-authIngress:
-  enabled: true 
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-  path: /auth
-  hosts:
-     - rubin-rucio.slac.stanford.edu 
-
-traceIngress:
-  enabled: false
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  path: /traces
-  hosts: []
-
-
 ## values used to configure Rucio
 config:
-  api:
-    endpoints: auth,accountlimits,accounts,config,credentials,dids,export,heartbeats,identities,import,lifetime_exceptions,locks,meta,ping,redirect,replicas,requests,rses,rules,scopes,subscriptions
-
   # common:
     ## config.common.logdir: the default directoy to write logs to (default: "/var/log/rucio")
     # logdir: "/var/log/rucio"
@@ -186,9 +136,6 @@ config:
     # loglevel: "DEBUG"
     ## config.common.mailtemplatedir: directory containing the mail templates (default: "/opt/rucio/etc/mail_templates")
     # mailtemplatedir: "/opt/rucio/etc/mail_templates"
-
-  conveyor:
-    usercert: /opt/proxy/x509
 
   # database:
     ## config.database.default: the connection string for the database (default: "sqlite:////tmp/rucio.db")
@@ -238,10 +185,11 @@ config:
     # password: ""
 
   policy:
+    package: rubin
     ## config.permission.policy: (default "generic")
     # permission: "generic"
     ## config.permission.schema: (default "generic")
-    schema: "lsst"
+    # schema: "lsst"
     ## config.permission.lfn2pfn_algorithm_default: (default "hash")
     # lfn2pfn_algorithm_default: "hash"
     ## config.permission.support: (default "https://github.com/rucio/rucio/issues/")
@@ -256,27 +204,11 @@ config:
 
 serverResources:
   limits:
-    memory: "2000Mi"
-    cpu: "700m"
-  requests:
-    memory: "1200Mi"
-    cpu: "200m"
-
-authServerResources:
-  limits:
-    memory: "1200Mi"
-    cpu: "700m"
-  requests:
     memory: "600Mi"
+    cpu: "700m"
+  requests:
+    memory: "200Mi"
     cpu: "200m"
-
-traceServerResources: {}
-  # limits:
-  #  cpu: 100m
-  #  memory: 128Mi
-  # requests:
-  #  cpu: 100m
-  #  memory: 128Mi
 
 nodeSelector: {}
 

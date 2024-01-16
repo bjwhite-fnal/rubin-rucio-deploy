@@ -6,12 +6,12 @@ metadata:
   name: usdf-rucio-ui.config.yaml
   labels:
     app: rucio-ui
-    chart: rucio-ui-1.30.1
+    chart: rucio-ui-32.0.1
     release: "usdf"
     heritage: "Helm"
 type: Opaque
 data:
-  common.json: "ewogICJkYXRhYmFzZSI6IHt9LAogICJwb2xpY3kiOiB7CiAgICAic2NoZW1hIjogImxzc3QiCiAgfQp9"
+  common.json: "ewogICJkYXRhYmFzZSI6IHt9LAogICJwb2xpY3kiOiB7CiAgICAicGFja2FnZSI6ICJydWJpbiIKICB9Cn0="
 ---
 # Source: rucio-ui/templates/secrets.yaml
 apiVersion: v1
@@ -20,7 +20,7 @@ metadata:
   name: usdf-rucio-ui.cfg
   labels:
     app: rucio-ui
-    chart: "rucio-ui-1.30.1"
+    chart: "rucio-ui-32.0.1"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -41,7 +41,7 @@ metadata:
   name: usdf-rucio-ui-aliases
   labels:
     app: usdf-rucio-ui
-    chart: "rucio-ui-1.30.1"
+    chart: "rucio-ui-32.0.1"
     release: "usdf"
     heritage: "Helm"
 data:
@@ -57,7 +57,7 @@ metadata:
   name: usdf-rucio-ui
   labels:
     app: rucio-ui
-    chart: rucio-ui-1.30.1
+    chart: rucio-ui-32.0.1
     release: usdf
     heritage: Helm
 spec:
@@ -78,7 +78,7 @@ metadata:
   name: usdf-rucio-ui
   labels:
     app: rucio-ui
-    chart: rucio-ui-1.30.1
+    chart: rucio-ui-32.0.1
     release: usdf
     heritage: Helm
 spec:
@@ -99,7 +99,7 @@ spec:
         app: rucio-ui
         release: usdf
       annotations:
-        checksum/config: b80bc1cf5c859b5c7d10efad11cb1c93dc98c656
+        checksum/config: b2cb0a694e131e8da34c2802cc86d308d2f545c6
     spec:
       volumes:
       - name: config
@@ -119,9 +119,9 @@ spec:
       - name: cafile
         secret:
           secretName: usdf-cafile
-      - name: lsst-schema-file
+      - name: policy-package
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-policy-package
       containers:
         - name: httpd-error-log
           image: busybox
@@ -130,7 +130,7 @@ spec:
           - name: httpdlog
             mountPath: /var/log/httpd
         - name: rucio-ui
-          image: "rucio/rucio-ui:release-1.29.12"
+          image: "rucio/rucio-ui:release-33.2.0"
           imagePullPolicy: Always
           ports:
             - name: http
@@ -157,9 +157,9 @@ spec:
             - name: cafile
               mountPath: /etc/grid-security/ca.pem
               subPath: ca.pem
-            - name: lsst-schema-file 
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: lsst.py
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
+              subPath: 
           env:
             - name: RUCIO_HTTPD_LEGACY_DN
               valueFrom:
@@ -201,6 +201,8 @@ spec:
                 secretKeyRef:
                   name: usdf-rucio-ui.cfg
                   key: threads_per_child
+            - name: PYTHONPATH
+              value: "/opt/rucio/permissions"
 
             - name: RUCIO_PROXY
               value: 

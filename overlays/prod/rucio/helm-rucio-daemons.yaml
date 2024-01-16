@@ -12,7 +12,7 @@ metadata:
   name: usdf-rucio-daemons.config.abacus-account
   labels:
     app: rucio-daemons-abacus-account
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -26,7 +26,7 @@ metadata:
   name: usdf-rucio-daemons.config.abacus-collection-replica
   labels:
     app: rucio-daemons-abacus-collection-replica
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -40,7 +40,7 @@ metadata:
   name: usdf-rucio-daemons.config.abacus-rse
   labels:
     app: rucio-daemons-abacus-rse
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -54,7 +54,7 @@ metadata:
   name: usdf-rucio-daemons.config.conveyor-finisher
   labels:
     app: rucio-daemons-conveyor-finisher
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -68,7 +68,7 @@ metadata:
   name: usdf-rucio-daemons.config.conveyor-poller
   labels:
     app: rucio-daemons-conveyor-poller
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -82,7 +82,7 @@ metadata:
   name: usdf-rucio-daemons.config.conveyor-submitter
   labels:
     app: rucio-daemons-conveyor-submitter
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -96,7 +96,7 @@ metadata:
   name: usdf-rucio-daemons.config.judge-cleaner
   labels:
     app: rucio-daemons-judge-cleaner
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -110,7 +110,7 @@ metadata:
   name: usdf-rucio-daemons.config.judge-evaluator
   labels:
     app: rucio-daemons-judge-evaluator
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -124,7 +124,7 @@ metadata:
   name: usdf-rucio-daemons.config.judge-injector
   labels:
     app: rucio-daemons-judge-injector
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -138,7 +138,7 @@ metadata:
   name: usdf-rucio-daemons.config.judge-repairer
   labels:
     app: rucio-daemons-judge-repairer
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -152,7 +152,7 @@ metadata:
   name: usdf-rucio-daemons.config.minos
   labels:
     app: rucio-daemons-minos
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -166,7 +166,7 @@ metadata:
   name: usdf-rucio-daemons.config.necromancer
   labels:
     app: rucio-daemons-necromancer
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -180,7 +180,7 @@ metadata:
   name: usdf-rucio-daemons.config.reaper
   labels:
     app: rucio-daemons-reaper
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -194,12 +194,12 @@ metadata:
   name: usdf-rucio-daemons.config.common
   labels:
     app: rucio-daemons
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
 data:
-  common.json: "ewogICJjb252ZXlvciI6IHsKICAgICJjYWNlcnQiOiAiL29wdC9jZXJ0cy9jYS5wZW0iLAogICAgImZ0c2hvc3RzIjogImh0dHBzOi8vZnRzLWV2YWwwMS5zbGFjLnN0YW5mb3JkLmVkdTo4NDQ2LGh0dHBzOi8vbGNnZnRzMy5ncmlkcHAucmwuYWMudWs6ODQ0NiIsCiAgICAic2NoZW1lIjogInNybSxnc2lmdHAscm9vdCxodHRwLGh0dHBzIiwKICAgICJ0cmFuc2ZlcnRvb2wiOiAiZnRzMyIsCiAgICAidXNlcmNlcnQiOiAiL29wdC9wcm94eS94NTA5dXAiCiAgfSwKICAibW9uaXRvciI6IHsKICAgICJlbmFibGVfbWV0cmljcyI6ICJUcnVlIgogIH0sCiAgInBvbGljeSI6IHsKICAgICJzY2hlbWEiOiAibHNzdCIKICB9Cn0="
+  common.json: "ewogICJhdXRvbWF0aXgiOiB7CiAgICAiYWNjb3VudCI6ICJhdXRvbWF0aXgiLAogICAgImRhdGFzZXRfbGlmZXRpbWUiOiAzNjAwMCwKICAgICJkYXRhc2V0X3BhdHRlcm4iOiAiZGlkX3ByZWZpeC9kYXRlL3V1aWQiLAogICAgImRpZF9wcmVmaXgiOiAiYXV0b21hdGl4IiwKICAgICJmaWxlX3BhdHRlcm4iOiAiZHNuL3V1aWQiLAogICAgInJzZXMiOiAiU0xBQ19URVNUX0RJU0ssIFJBTF9URVNUX0RJU0ssIElOMlAzX1RFU1RfRElTSyIsCiAgICAic2NvcGUiOiAidXNlci5hdXRvbWF0aXgiLAogICAgInNlcGFyYXRvciI6ICIvIiwKICAgICJzZXRfbWV0YWRhdGEiOiAiVHJ1ZSIKICB9LAogICJjbGllbnQiOiB7CiAgICAiYWNjb3VudCI6ICJhdXRvbWF0aXgiLAogICAgImF1dGhfaG9zdCI6ICJodHRwczovL3J1YmluLXJ1Y2lvLnNsYWMuc3RhbmZvcmQuZWR1Ojg0NDMiLAogICAgImF1dGhfdHlwZSI6ICJ4NTA5X3Byb3h5IiwKICAgICJjYV9jZXJ0IjogIi9vcHQvY2VydHMiLAogICAgImNsaWVudF94NTA5X3Byb3h5IjogIi9vcHQvcHJveHkveDUwOXVwIiwKICAgICJwcm90b2NvbF9zdGF0X3JldHJpZXMiOiA2LAogICAgInJlcXVlc3RfcmV0cmllcyI6IDYsCiAgICAicnVjaW9faG9zdCI6ICJodHRwczovL3J1YmluLXJ1Y2lvLnNsYWMuc3RhbmZvcmQuZWR1Ojg0NDMiCiAgfSwKICAiY29udmV5b3IiOiB7CiAgICAiY2FjZXJ0IjogIi9vcHQvY2VydHMvY2EucGVtIiwKICAgICJmdHNob3N0cyI6ICJodHRwczovL2Z0cy1ldmFsMDEuc2xhYy5zdGFuZm9yZC5lZHU6ODQ0NixodHRwczovL2xjZ2Z0czMuZ3JpZHBwLnJsLmFjLnVrOjg0NDYiLAogICAgInNjaGVtZSI6ICJzcm0sZ3NpZnRwLHJvb3QsaHR0cCxodHRwcyIsCiAgICAidHJhbnNmZXJ0b29sIjogImZ0czMiLAogICAgInVzZXJjZXJ0IjogIi9vcHQvcHJveHkveDUwOXVwIgogIH0sCiAgImhlcm1lcyI6IHsKICAgICJzZXJ2aWNlc19saXN0IjogImthZmthIgogIH0sCiAgIm1lc3NhZ2luZy1oZXJtZXMta2Fma2EiOiB7CiAgICAiYnJva2VyIjogIjEzNC43OS4yMy4yMjE6OTA5NCwxMzQuNzkuMjMuMjIyOjkwOTQsMTM0Ljc5LjIzLjIyMzo5MDk0IiwKICAgICJtZXNzYWdlX2ZpbHRlciI6ICJydWNpby5kYWVtb25zLmhlcm1lcy5rYWZrYS5maWx0ZXJzLmZpbHRlcmVkX2xpc3QiLAogICAgIm5vbnNzbF9wb3J0IjogOTA5MiwKICAgICJwb3J0IjogOTA5MiwKICAgICJ0b3BpY19saXN0IjogIlVTREZfU1RTX0RJU0ssRlJERl9TVFNfRElTSyIsCiAgICAidXNlX3NzbCI6IGZhbHNlCiAgfSwKICAibW9uaXRvciI6IHsKICAgICJlbmFibGVfbWV0cmljcyI6ICJUcnVlIgogIH0sCiAgInBvbGljeSI6IHsKICAgICJwYWNrYWdlIjogInJ1YmluIgogIH0sCiAgInRyYW5zZmVycyI6IHsKICAgICJtdWx0aWhvcF9yc2VfZXhwcmVzc2lvbiI6ICIiCiAgfSwKICAidHJhbnNtb2dyaWZpZXIiOiB7CiAgICAibWF4ZGlkcyI6IDQwMDAwCiAgfQp9"
 ---
 # Source: rucio-daemons/templates/transmogrifier.yaml
 apiVersion: v1
@@ -208,7 +208,7 @@ metadata:
   name: usdf-rucio-daemons.config.transmogrifier
   labels:
     app: rucio-daemons-transmogrifier
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -222,7 +222,7 @@ metadata:
   name: usdf-rucio-daemons.config.undertaker
   labels:
     app: rucio-daemons-undertaker
-    chart: "rucio-daemons-1.30.12"
+    chart: "rucio-daemons-32.0.2"
     release: "usdf"
     heritage: "Helm"
 type: Opaque
@@ -252,7 +252,7 @@ metadata:
   labels:
     app: rucio-daemons-abacus-account
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -292,12 +292,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -310,9 +316,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -324,13 +335,20 @@ spec:
               value: "abacus-account"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1000Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/abacus.yaml
 apiVersion: apps/v1
@@ -340,7 +358,7 @@ metadata:
   labels:
     app: rucio-daemons-abacus-collection-replica
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -380,12 +398,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -398,9 +422,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -412,13 +441,20 @@ spec:
               value: "abacus-collection-replica"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1000Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/abacus.yaml
 apiVersion: apps/v1
@@ -428,7 +464,7 @@ metadata:
   labels:
     app: rucio-daemons-abacus-rse
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -468,12 +504,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -486,9 +528,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -500,13 +547,20 @@ spec:
               value: "abacus-rse"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1000Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/conveyor.yaml
 apiVersion: apps/v1
@@ -516,7 +570,7 @@ metadata:
   labels:
     app: rucio-daemons-conveyor-finisher
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -539,7 +593,7 @@ spec:
         release: usdf
         rucio-daemon: conveyor-finisher
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -556,12 +610,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -574,9 +634,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -588,13 +653,20 @@ spec:
               value: "conveyor-finisher"
             - name: RUCIO_DAEMON_ARGS
               value: " --total-threads 1 --activities 'Data Brokering' 'Data Consolidation' 'Data rebalancing' 'Debug' 'Express' 'Functional Test' 'Group Subscriptions' Production Input' 'Production Output' Analysis Input' 'Analysis Output' 'Staging' 'T0 Export' 'T0 Tape' 'Upload/Download' 'User Subscriptions' 'Data Challenge'"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/conveyor.yaml
 apiVersion: apps/v1
@@ -604,7 +676,7 @@ metadata:
   labels:
     app: rucio-daemons-conveyor-poller
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -627,7 +699,7 @@ spec:
         release: usdf
         rucio-daemon: conveyor-poller
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -644,12 +716,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -662,9 +740,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -676,13 +759,20 @@ spec:
               value: "conveyor-poller"
             - name: RUCIO_DAEMON_ARGS
               value: " --total-threads 1  --activities 'Data Brokering' 'Data Consolidation' 'Data rebalancing' 'Debug' 'Express' 'Functional Test' 'Group Subscriptions' Production Input' 'Production Output' Analysis Input' 'Analysis Output' 'Staging' 'T0 Export' 'T0 Tape' 'Upload/Download' 'User Subscriptions' 'Data Challenge'"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/conveyor.yaml
 apiVersion: apps/v1
@@ -692,7 +782,7 @@ metadata:
   labels:
     app: rucio-daemons-conveyor-submitter
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -715,7 +805,7 @@ spec:
         release: usdf
         rucio-daemon: conveyor-submitter
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -732,12 +822,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -750,9 +846,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -763,14 +864,21 @@ spec:
             - name: RUCIO_DAEMON
               value: "conveyor-submitter"
             - name: RUCIO_DAEMON_ARGS
-              value: " --total-threads 1 --group-bulk 100 --sleep-time 60 --activities 'Data Brokering' 'Data Consolidation' 'Data rebalancing' 'Debug' 'Express' 'Functional Test' 'Group Subscriptions' Production Input' 'Production Output' Analysis Input' 'Analysis Output' 'Staging' 'T0 Export' 'T0 Tape' 'Upload/Download' 'User Subscriptions' 'Data Challenge'"
+              value: " --total-threads 1 --sleep-time 120 --activities 'Data Brokering' 'Data Consolidation' 'Data rebalancing' 'Debug' 'Express' 'Functional Test' 'Group Subscriptions' Production Input' 'Production Output' Analysis Input' 'Analysis Output' 'Staging' 'T0 Export' 'T0 Tape' 'Upload/Download' 'User Subscriptions' 'Data Challenge'"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/judge.yaml
 apiVersion: apps/v1
@@ -780,7 +888,7 @@ metadata:
   labels:
     app: rucio-daemons-judge-cleaner
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -803,7 +911,7 @@ spec:
         release: usdf
         rucio-daemon: judge-cleaner
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -820,12 +928,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -838,9 +952,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -852,13 +971,20 @@ spec:
               value: "judge-cleaner"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/judge.yaml
 apiVersion: apps/v1
@@ -868,7 +994,7 @@ metadata:
   labels:
     app: rucio-daemons-judge-evaluator
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -891,7 +1017,7 @@ spec:
         release: usdf
         rucio-daemon: judge-evaluator
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -908,12 +1034,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -926,9 +1058,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -940,13 +1077,20 @@ spec:
               value: "judge-evaluator"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 2000Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1000Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/judge.yaml
 apiVersion: apps/v1
@@ -956,7 +1100,7 @@ metadata:
   labels:
     app: rucio-daemons-judge-injector
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -979,7 +1123,7 @@ spec:
         release: usdf
         rucio-daemon: judge-injector
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -996,12 +1140,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -1014,9 +1164,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1028,13 +1183,20 @@ spec:
               value: "judge-injector"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 2000Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1000Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/judge.yaml
 apiVersion: apps/v1
@@ -1044,7 +1206,7 @@ metadata:
   labels:
     app: rucio-daemons-judge-repairer
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -1067,7 +1229,7 @@ spec:
         release: usdf
         rucio-daemon: judge-repairer
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -1084,12 +1246,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -1102,9 +1270,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1116,13 +1289,20 @@ spec:
               value: "judge-repairer"
             - name: RUCIO_DAEMON_ARGS
               value: "--threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
-              cpu: 1400m
-              memory: 1200Mi
+              cpu: 700m
+              memory: 600Mi
             requests:
-              cpu: 1000m
-              memory: 1200Mi
+              cpu: 700m
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/minos.yaml
 apiVersion: apps/v1
@@ -1132,7 +1312,7 @@ metadata:
   labels:
     app: rucio-daemons-minos
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -1155,7 +1335,7 @@ spec:
         release: usdf
         rucio-daemon: minos
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -1172,12 +1352,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -1190,9 +1376,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1204,13 +1395,20 @@ spec:
               value: "minos"
             - name: RUCIO_DAEMON_ARGS
               value: " --threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 100m
-              memory: 800Mi
+              memory: 400Mi
 ---
 # Source: rucio-daemons/templates/necromancer.yaml
 apiVersion: apps/v1
@@ -1220,7 +1418,7 @@ metadata:
   labels:
     app: rucio-daemons-necromancer
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -1243,7 +1441,7 @@ spec:
         release: usdf
         rucio-daemon: necromancer
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -1260,12 +1458,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file 
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -1278,9 +1482,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file 
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1292,13 +1501,20 @@ spec:
               value: "necromancer"
             - name: RUCIO_DAEMON_ARGS
               value: ""
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 100m
-              memory: 800Mi
+              memory: 400Mi
 ---
 # Source: rucio-daemons/templates/reaper.yaml
 apiVersion: apps/v1
@@ -1308,7 +1524,7 @@ metadata:
   labels:
     app: rucio-daemons-reaper
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -1331,7 +1547,7 @@ spec:
         release: usdf
         rucio-daemon: reaper
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -1348,12 +1564,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle-reaper
-      - name: lsst-schema-file 
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -1366,9 +1588,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file 
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1386,13 +1613,20 @@ spec:
               value: "/opt/rucio/reaper"
             - name: X509_USER_PROXY
               value: "/opt/proxy/x509up"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/transmogrifier.yaml
 apiVersion: apps/v1
@@ -1402,7 +1636,7 @@ metadata:
   labels:
     app: rucio-daemons-transmogrifier
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -1425,7 +1659,7 @@ spec:
         release: usdf
         rucio-daemon: transmogrifier
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -1442,12 +1676,18 @@ spec:
       - name: ca-volume
         secret:
           secretName: usdf-rucio-ca-bundle
-      - name: lsst-schema-file 
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: proxy-volume
@@ -1460,9 +1700,14 @@ spec:
             - name: config-component
               mountPath: /opt/rucio/etc/conf.d/20_component.json
               subPath: component.json
-            - name: lsst-schema-file 
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1474,13 +1719,20 @@ spec:
               value: "transmogrifier"
             - name: RUCIO_DAEMON_ARGS
               value: " --threads 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/undertaker.yaml
 apiVersion: apps/v1
@@ -1490,7 +1742,7 @@ metadata:
   labels:
     app: rucio-daemons-undertaker
     app-group: rucio-daemons
-    chart: rucio-daemons-1.30.12
+    chart: rucio-daemons-32.0.2
     release: usdf
     heritage: Helm
 spec:
@@ -1513,7 +1765,7 @@ spec:
         release: usdf
         rucio-daemon: undertaker
       annotations:
-        checksum/config: a33d0334db825808c80c2621bcca7e6bfa41d6fd
+        checksum/config: 611e8c1a983f7eca4d65150f6f263f945544acb2
         prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
     spec:
@@ -1527,12 +1779,18 @@ spec:
       - name: proxy-volume
         secret:
           secretName: usdf-rucio-x509up
-      - name: lsst-schema-file 
+      - name: rucio-automatix-input-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-rucio-automatix-input-file
+      - name: hermeskafka-constants
+        secret:
+          secretName: usdf-hermeskafka-constants
+      - name: policy-package
+        secret:
+          secretName: usdf-policy-package
       containers:
         - name: rucio-daemons
-          image: "rucio/rucio-daemons:release-1.29.12"
+          image: "rucio/rucio-daemons:release-33.2.0"
           imagePullPolicy: Always
           volumeMounts:
             - name: config-common
@@ -1543,9 +1801,14 @@ spec:
               subPath: component.json
             - name: proxy-volume
               mountPath: /opt/proxy
-            - name: lsst-schema-file 
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: rucio-automatix-input-file
+              mountPath: /opt/rucio/etc/automatix.json
+              subPath: "automatix.json"
+            - name: hermeskafka-constants
+              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/constants.py
+              subPath: "constants.py"
+            - name: policy-package
+              mountPath: /opt/rucio/permissions/rubin
           ports:
             - name: metrics
               containerPort: 8080
@@ -1557,13 +1820,20 @@ spec:
               value: "undertaker"
             - name: RUCIO_DAEMON_ARGS
               value: " --total-workers 1"
+            - name: PYTHONPATH
+              value: /opt/rucio/permissions
+            - name: RUCIO_CFG_DATABASE_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  key: db-conn-str.txt
+                  name: usdf-db-conn-str
           resources:
             limits:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
             requests:
               cpu: 700m
-              memory: 1200Mi
+              memory: 600Mi
 ---
 # Source: rucio-daemons/templates/renew-fts-cronjob.yaml
 apiVersion: batch/v1
@@ -1581,9 +1851,12 @@ spec:
           - name: config-common
             secret:
               secretName: usdf-rucio-daemons.config.common
-          - name: lsst-schema-file
+          - name: voms-servers-file
             secret:
-              secretName: usdf-lsst-schema-file
+              secretName: usdf-voms-servers-file
+          - name: lsst-vomsdir
+            secret:
+              secretName: usdf-lsst-vomsdir
           - name: usercert
             secret:
               secretName: usdf-fts-cert
@@ -1592,7 +1865,7 @@ spec:
               secretName:  usdf-fts-key
           containers:
             - name: renew-fts-cron
-              image: "bjwhitefnal/rubin-rucio-fts-cron:1.29.11"
+              image: "rucio/fts-cron:latest"
               imagePullPolicy: Always
               resources:
                 limits:
@@ -1609,18 +1882,32 @@ spec:
                   mountPath: /opt/rucio/certs/
                 - name: userkey
                   mountPath: /opt/rucio/keys/
-                - name: lsst-schema-file
-                  mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-                  subPath: "lsst.py"
+                - name: voms-servers-file
+                  mountPath: /etc/vomses/vomses
+                  subPath: "vomses"
+                - name: lsst-vomsdir
+                  mountPath: /etc/grid-security/vomsdir
               env:
                 - name: RUCIO_VO
                   value: "lsst"
                 - name: RUCIO_FTS_VOMS
                   value: "lsst:/lsst/Role=ddmopr"
+                - name: RUCIO_FTS_SCRIPT
+                  value: "default"
+                - name: RUCIO_FTS_VO_COUNT
+                  value: "1"
+                - name: RUCIO_FTS_VO_0
+                  value: lsst
+                - name: RUCIO_FTS_VOMS_0
+                  value: lsst:/lsst/Role=ddmopr
                 - name: RUCIO_FTS_SERVERS
                   value: "https://fts-eval01.slac.stanford.edu:8446,https://lcgfts3.gridpp.rl.ac.uk:8446"
                 - name: RUCIO_FTS_SECRETS
                   value: "usdf-rucio-x509up"
+                - name: USERCERT_NAME
+                  value: usercert.pem
+                - name: USERKEY_NAME
+                  value: new_userkey.pem
           restartPolicy: OnFailure
 ---
 # Source: rucio-daemons/templates/renew-fts-cronjob.yaml
@@ -1640,9 +1927,12 @@ spec:
       - name: config-common
         secret:
           secretName: usdf-rucio-daemons.config.common
-      - name: lsst-schema-file
+      - name: voms-servers-file
         secret:
-          secretName: usdf-lsst-schema-file
+          secretName: usdf-voms-servers-file
+      - name: lsst-vomsdir
+        secret:
+          secretName: usdf-lsst-vomsdir
       - name: usercert
         secret:
           secretName: usdf-fts-cert
@@ -1651,7 +1941,7 @@ spec:
           secretName:  usdf-fts-key
       containers:
         - name: renew-fts-cron
-          image: "bjwhitefnal/rubin-rucio-fts-cron:1.29.11"
+          image: "rucio/fts-cron:latest"
           imagePullPolicy: Always
           resources:
             limits:
@@ -1668,16 +1958,30 @@ spec:
               mountPath: /opt/rucio/certs/
             - name: userkey
               mountPath: /opt/rucio/keys/
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-              subPath: "lsst.py"
+            - name: voms-servers-file
+              mountPath: /etc/vomses/vomses
+              subPath: "vomses"
+            - name: lsst-vomsdir
+              mountPath: /etc/grid-security/vomsdir
           env:
             - name: RUCIO_VO
               value: "lsst"
             - name: RUCIO_FTS_VOMS
               value: "lsst:/lsst/Role=ddmopr"
+            - name: RUCIO_FTS_SCRIPT
+              value: "default"
+            - name: RUCIO_FTS_VO_COUNT
+              value: "1"
+            - name: RUCIO_FTS_VO_0
+              value: lsst
+            - name: RUCIO_FTS_VOMS_0
+              value: lsst:/lsst/Role=ddmopr
             - name: RUCIO_FTS_SERVERS
               value: "https://fts-eval01.slac.stanford.edu:8446,https://lcgfts3.gridpp.rl.ac.uk:8446"
             - name: RUCIO_FTS_SECRETS
               value: "usdf-rucio-x509up"
+            - name: USERCERT_NAME
+              value: usercert.pem
+            - name: USERKEY_NAME
+              value: new_userkey.pem
       restartPolicy: OnFailure

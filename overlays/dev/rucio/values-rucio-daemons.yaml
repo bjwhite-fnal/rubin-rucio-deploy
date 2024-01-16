@@ -32,7 +32,7 @@ necromancerCount: 1
 
 image:
   repository: rucio/rucio-daemons
-  tag: release-32.5.1
+  tag: release-33.2.0
   pullPolicy: Always
 
 strategy:
@@ -614,9 +614,6 @@ automaticRestart:
   schedule: "0 0 * * *"
 
 secretMounts:
-  - secretName: lsst-schema-file
-    mountPath: /usr/local/lib/python3.9/site-packages/rucio/common/schema/lsst.py
-    subPath: lsst.py
   - secretName: rucio-automatix-input-file
     mountPath: /opt/rucio/etc/automatix.json
     subPath: automatix.json
@@ -678,6 +675,9 @@ config:
     # carbon_server: "8125"
     ## config.monitor.user_scope: scope used on the graphite server (default: "default_docker")
     # user_scope: "default_docker"
+
+  transfers:
+    multihop_rse_expression: ""
 
   policy:
     package: rubin

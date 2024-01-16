@@ -21,7 +21,7 @@ service:
 
 image:
   repository: rucio/rucio-ui
-  tag: release-32.5.1
+  tag: release-33.2.0
   pullPolicy: Always
 
 strategy:
@@ -51,9 +51,6 @@ ingress:
 secretMounts:
   - secretName: policy-package
     mountPath: /opt/rucio/permissions/rubin
-  - secretName: lsst-schema-file
-    mountPath: /usr/local/lib/python3.9/site-packages/rucio/common/schema/lsst.py
-    subPath: lsst.py
 
 ## values used to configure apache
 httpd_config:

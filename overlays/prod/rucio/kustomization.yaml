@@ -1,22 +1,23 @@
+
 namespace: rucio
 
 resources:
 - ns.yaml
 - helm-rucio-server.yaml
 - helm-rucio-daemons.yaml
-- helm-rucio-ui.yaml
+#- helm-rucio-ui.yaml
 
 patchesStrategicMerge:
-- rucio-env-patch.yaml
+- patch-ingress.yaml
 - grid-certificates-patch.yaml
-#- patches-rucio-ui.yaml
-
+#- hermesk-image-patch.yaml
 
 secretGenerator:
 # rucio
 - name: usdf-db-conn-str
   files:
   - db-conn-str.txt=etc/.secrets/db-conn-str.txt
+
 - name: usdf-server-hostcert
   files:
   - hostcert.pem=etc/.secrets/hostcert.pem
@@ -26,35 +27,31 @@ secretGenerator:
 - name: usdf-server-cafile
   files:
   - ca.pem=etc/.secrets/ca.pem
-- name: usdf-auth-hostcert
-  files:
-  - hostcert.pem=etc/.secrets/hostcert.pem
-- name: usdf-auth-hostkey
-  files:
-  - hostkey.pem=etc/.secrets/hostkey.pem
-- name: usdf-auth-cafile
-  files:
-  - ca.pem=etc/.secrets/ca.pem
-- name: usdf-rucio-fts-cert
-  files:
-  - usercert.pem=etc/.secrets/hostcert.pem
-- name: usdf-rucio-fts-key
-  files:
-  - new_userkey.pem=etc/.secrets/hostkey.pem
+
 - name: usdf-rucio-x509up
   files:
   - hostcert.pem=etc/.secrets/hostcert.pem
   - hostkey.pem=etc/.secrets/hostkey.pem
   options:
     disableNameSuffixHash: true
+
 - name: usdf-rucio-ca-bundle
   files:
   - ca.pem=etc/.secrets/ca.pem
+  options:
+    disableNameSuffixHash: true
+- name: usdf-rucio-ca-bundle-reaper
+  files:
+  - ca.pem=etc/.secrets/ca.pem
+  options:
+    disableNameSuffixHash: true
+
 # ingress
 - name: rucio-server.tls-secret
   files:
   - cert=etc/.secrets/hostcert.pem
   - key=etc/.secrets/hostkey.pem
+
 # webui
 - name: usdf-hostcert
   files:
@@ -65,6 +62,7 @@ secretGenerator:
 - name: usdf-cafile
   files:
   - ca.pem=etc/.secrets/ca.pem
+
 # fts3
 - name: usdf-fts-cert
   files:
@@ -72,9 +70,42 @@ secretGenerator:
 - name: usdf-fts-key
   files:
   - new_userkey.pem=etc/.secrets/hostkey.pem
+
 # lsst customization
 - name: usdf-lsst-schema-file
   files:
   - lsst.py=etc/lsst.py
   options:
     disableNameSuffixHash: true
+
+# automatix input
+- name: usdf-rucio-automatix-input-file
+  files:
+  - automatix.json=etc/.secrets/automatix.json
+  options:
+    disableNameSuffixHash: true
+- name: usdf-hermeskafka-constants
+  files:
+  - constants.py=etc/constants.py
+  options:
+    disableNameSuffixHash: true
+
+# VOMS server information files
+- name: usdf-voms-servers-file
+  files:
+  - vomses=etc/vomses
+  options:
+    disableNameSuffixHash: true
+- name: usdf-lsst-vomsdir
+  files:
+  - voms.slac.stanford.edu.lsc=etc/voms.slac.stanford.edu.lsc
+  - voms1.slac.stanford.edu.lsc=etc/voms1.slac.stanford.edu.lsc
+  options:
+    disableNameSuffixHash: true
+
+# The desired policy package implementation files
+- name: usdf-policy-package
+  files:
+  - __init__.py=etc/policy-package/__init__.py
+  - permission.py=etc/policy-package/permission.py
+  - schema.py=etc/policy-package/schema.py

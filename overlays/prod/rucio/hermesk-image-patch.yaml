@@ -4,7 +4,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: usdf-hermes2
+  name: usdf-hermes
 spec:
   template:
     spec:

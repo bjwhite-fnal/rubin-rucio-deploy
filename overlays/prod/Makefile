@@ -1,7 +1,6 @@
-
-SERVER_CHART_VERSION := 1.30.13
-DAEMON_CHART_VERSION := 1.30.12
-UI_CHART_VERSION := 1.30.1
+SERVER_CHART_VERSION := 32.0.0
+DAEMON_CHART_VERSION := 32.0.2
+UI_CHART_VERSION := 32.0.1
 
 helm:
 	helm repo add rucio https://rucio.github.io/helm-charts
@@ -33,16 +32,18 @@ get-secrets:
 	vault kv get --field=usdf-server-hostkey secret/rubin/usdf-rucio/rucio  > rucio/etc/.secrets/hostkey.pem
 	vault kv get --field=usdf-server-hostcert secret/rubin/usdf-rucio/rucio  > rucio/etc/.secrets/hostcert.pem
 	vault kv get --field=usdf-server-cafile secret/rubin/usdf-rucio/rucio  > rucio/etc/.secrets/ca.pem
-	vault kv get --field=usdf-db-conn-str secret/rubin/usdf-rucio-dev/rucio  > rucio/etc/.secrets/db-conn-str.txt
+	vault kv get --field=usdf-db-conn-str secret/rubin/usdf-rucio/rucio  > rucio/etc/.secrets/db-conn-str.txt
+	cp rucio/etc/automatix.json rucio/etc/.secrets/automatix.json
 	mkdir -p postgres/etc/.secrets
 	vault kv get --field=client-secret secret/rubin/usdf-rucio/s3  > postgres/etc/.secrets/client-secret
 	vault kv get --field=client-id secret/rubin/usdf-rucio/s3  > postgres/etc/.secrets/client-id
 	vault kv get --field=username secret/rubin/usdf-rucio/database  > postgres/etc/.secrets/username
 	vault kv get --field=password secret/rubin/usdf-rucio/database  > postgres/etc/.secrets/password
-	#vault kv get --field=grid-certificates.tar.gz secret/rubin/usdf-rucio/rucio | base64 --decode --ignore-garbage > etc/.secrets/grid-certificates.tar.gz && cd etc/.secrets/ && tar xfvz grid-certificates.tar.gz && rm grid-certificates.tar.gz
+	mkdir -p data-backbone/redis/etc/.secrets
+	vault kv get --field=redis secret/rubin/usdf-rucio/data-backbone > data-backbone/redis/etc/.secrets/redis-secret
 
 clean-secrets:
-	rm -rf rucio/etc/.secrets postgres/etc/.secrets
+	rm -rf rucio/etc/.secrets postgres/etc/.secrets data-backbone/redis/etc/.secrets
 
 run-dump: 
 	kubectl kustomize .
@@ -57,4 +58,6 @@ apply: get-secrets rucio run-apply clean-secrets
 run-destroy:
 	kubectl delete -k .
 
-destroy: get-secret rucio run-destroy clean-secrets
+destroy: get-secrets rucio run-destroy clean-secrets
+
+

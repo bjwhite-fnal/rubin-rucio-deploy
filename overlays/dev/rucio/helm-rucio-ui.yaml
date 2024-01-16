@@ -122,9 +122,6 @@ spec:
       - name: policy-package
         secret:
           secretName: usdf-policy-package
-      - name: lsst-schema-file
-        secret:
-          secretName: usdf-lsst-schema-file
       containers:
         - name: httpd-error-log
           image: busybox
@@ -133,7 +130,7 @@ spec:
           - name: httpdlog
             mountPath: /var/log/httpd
         - name: rucio-ui
-          image: "rucio/rucio-ui:release-32.5.1"
+          image: "rucio/rucio-ui:release-33.2.0"
           imagePullPolicy: Always
           ports:
             - name: http
@@ -163,9 +160,6 @@ spec:
             - name: policy-package
               mountPath: /opt/rucio/permissions/rubin
               subPath: 
-            - name: lsst-schema-file
-              mountPath: /usr/local/lib/python3.9/site-packages/rucio/common/schema/lsst.py
-              subPath: lsst.py
           env:
             - name: RUCIO_HTTPD_LEGACY_DN
               valueFrom:

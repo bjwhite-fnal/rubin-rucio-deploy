@@ -8,6 +8,9 @@ replicaCount: 1
 # When set, run extra busybox containers in the relevant pods to also expose the error logs
 exposeErrorLogs: True 
 
+# Instead of specifying secrets explicitly, use ones with "expected" names as per "old" rucio
+use_deprecated_implicit_secrets: true
+
 service:
   type: ClusterIP # LoadBalancer
   # Run the webui server on port 443 instead of 80 and accept X509 certificates and proxies
@@ -18,7 +21,7 @@ service:
 
 image:
   repository: rucio/rucio-ui
-  tag: release-1.29.12
+  tag: release-33.2.0
   pullPolicy: Always
 
 strategy:
@@ -45,11 +48,9 @@ ingress:
   hosts:
      - rubin-rucio.slac.stanford.edu
 
-additionalSecrets:
-  lsst-schema-file:
-    secretName: lsst-schema-file
-    mountPath: /usr/local/lib/python3.6/site-packages/rucio/common/schema/lsst.py
-    subPath: lsst.py
+secretMounts:
+  - secretName: policy-package
+    mountPath: /opt/rucio/permissions/rubin
 
 ## values used to configure apache
 httpd_config:
@@ -60,6 +61,9 @@ httpd_config:
   threads_per_child: "5"
   max_clients: "20"
   max_requests_per_child: "8192"
+
+optional_config:
+  pythonpath: /opt/rucio/permissions
 
 ## values used to configure Rucio
 config:
@@ -94,10 +98,11 @@ config:
     # powuserpassword: ""
 
   policy:
+    package: rubin
     ## config.permission.policy: (default "generic")
     # permission: "generic"
     ## config.permission.schema: (default "generic")
-    schema: "lsst"
+    # schema: "lsst"
     ## config.permission.lfn2pfn_algorithm_default: (default "hash")
     # lfn2pfn_algorithm_default: "hash"
     ## config.permission.support: (default "https://github.com/rucio/rucio/issues/")

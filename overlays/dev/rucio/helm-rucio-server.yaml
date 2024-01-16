@@ -86,9 +86,6 @@ spec:
           secretName: usdf-rucio-server.config.common
       - name: httpdlog
         emptyDir: {}
-      - name: lsst-schema-file
-        secret:
-          secretName: usdf-lsst-schema-file
       - name: policy-package
         secret:
           secretName: usdf-policy-package
@@ -116,7 +113,7 @@ spec:
               cpu: 20m
               memory: 20Mi
         - name: rucio-server
-          image: "rucio/rucio-server:release-32.5.1"
+          image: "rucio/rucio-server:release-33.2.0"
           imagePullPolicy: Always
           resources:
             limits:
@@ -131,9 +128,6 @@ spec:
             subPath: common.json
           - name: httpdlog
             mountPath: /var/log/httpd
-          - name: lsst-schema-file
-            mountPath: /usr/local/lib/python3.9/site-packages/rucio/common/schema/lsst.py
-            subPath: lsst.py
           - name: policy-package
             mountPath: /opt/rucio/permissions/rubin
             subPath: 
